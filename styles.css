@@ -1,0 +1,169 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #1e1e1e;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #2ecc71;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+main {
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #3498db;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+#alternatives {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+button.alt {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  background: #444;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+button.alt:hover {
+  background: #555;
+}
+
+button.alt:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+button.alt {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  background: #444;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: background 0.2s;
+  
+  display: flex;            /* garante alinhamento correto */
+  flex-direction: column;   /* conteúdo (texto + img) empilhado */
+  align-items: flex-start;  /* alinha texto à esquerda */
+  justify-content: center;  /* centraliza verticalmente */
+  min-height: 60px;         /* altura mínima para ficar consistente */
+}
+
+button.alt img {
+  margin-top: 8px;          /* espaço entre texto e imagem */
+  max-width: 200px;         /* largura máxima da imagem */
+  height: auto;
+  border-radius: 6px;
+}
+
+.question-img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.alt-img {
+  max-width: 180px;
+  height: auto;
+  margin-top: 5px;
+  display: block;
+}
+
+
+#subjects {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.toggle {
+  padding: 8px 16px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.toggle.active {
+  background: #4a7bff;
+  border-color: #4a7bff;
+}
+
+
+.next-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #3498db;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.next-btn:disabled {
+  background: #7fb3d5;
+  cursor: not-allowed;
+}
+
+.next-btn:hover:not(:disabled) {
+  background: #2980b9;
+}

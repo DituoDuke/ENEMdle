@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENEMdle</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      
+<div id="subjects">
+  <button class="toggle" data-subject="matematica">Matemática</button>
+  <button class="toggle" data-subject="humanas">Humanas</button>
+  <button class="toggle" data-subject="linguagens">Linguagens</button>
+  <button class="toggle" data-subject="natureza">Natureza</button>
+</div>
+      <header>
+        <h1>ENEMdle</h1>
+        <p id="correctAnswers">Certas: 0/0</p>
+      </header>
+
+      <main>
+        <h2 id="title"></h2>
+        <p id="context"></p>
+        <p id="alterIntro"></p>
+
+        <div id="alternatives"></div>
+        
+        <button id="nextBtn" class="next-btn" disabled>Próxima questão</button>
+
+      </main>
+      
+      <footer>
+        <p>Desenvolvido por Tito</p>
+      </footer>
+    </div>
+  </body>
+</html>
