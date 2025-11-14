@@ -11,14 +11,17 @@ const title = document.querySelector("#title")
 const context = document.querySelector("#context")
 const alterIntro = document.querySelector("#alterIntro")
 const alternativesEl = document.querySelector("#alternatives")
-const correctAnswers = []
+let correctAnswers = []
 const correctAnswersEl = document.querySelector("#correctAnswers")
 const selectedSubjects = new Set()
+const resetBtn = document.querySelector("#resetBtn")
+
 document.querySelector("#nextBtn").addEventListener("click", () => {
   verifyQuestion()
 })
 document.querySelector("#nextBtn").disabled = true
 document.querySelector("#nextBtn").style.display = "none"
+
 const saved = JSON.parse(localStorage.getItem("correctAnswers"))
 if (Array.isArray(saved)) {
   correctAnswers.push(...saved)
@@ -39,10 +42,15 @@ document.querySelectorAll(".toggle").forEach(btn => {
     console.log("Matérias selecionadas:", [...selectedSubjects])
   })
 })
-
+resetBtn.addEventListener("click", () => {
+  correctAnswers = []
+  update()
+  localStorage.setItem("correctAnswers", JSON.stringify(correctAnswers))
+})
 
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
+
     const j = Math.floor(Math.random() * (i + 1))
     ;[arr[i], arr[j]] = [arr[j], arr[i]]
   }

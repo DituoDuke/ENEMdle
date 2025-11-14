@@ -167,3 +167,25 @@ button.alt img {
 .next-btn:hover:not(:disabled) {
   background: #2980b9;
 }
+
+#resetBtn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  margin-left: 10px;
+}
+
+#resetBtn:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+#resetBtn:active {
+  transform: translateY(0px);
+  background: #a93226;
+}
