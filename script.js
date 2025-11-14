@@ -71,7 +71,7 @@ async function verifyQuestion() {
   }
 }
 async function applyQuestion(q) {
-  title.innerText = q.title
+  title.innerText = q.title + " - " + q.discipline
 document.querySelector("#nextBtn").disabled = true
   document.querySelector("#nextBtn").style.display = "none"
 context.innerHTML = q.context
