@@ -168,7 +168,7 @@ button.alt img {
   background: #2980b9;
 }
 
-#resetBtn {
+.resetBtn {
   background: #e74c3c;
   color: white;
   border: none;
@@ -180,12 +180,12 @@ button.alt img {
   margin-left: 10px;
 }
 
-#resetBtn:hover {
+.resetBtn:hover {
   background: #c0392b;
   transform: translateY(-2px);
 }
 
-#resetBtn:active {
+.resetBtn:active {
   transform: translateY(0px);
   background: #a93226;
 }
