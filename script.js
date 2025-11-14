@@ -19,8 +19,11 @@ document.querySelector("#nextBtn").addEventListener("click", () => {
 })
 document.querySelector("#nextBtn").disabled = true
 document.querySelector("#nextBtn").style.display = "none"
-
-
+const saved = JSON.parse(localStorage.getItem("correctAnswers"))
+if (Array.isArray(saved)) {
+  correctAnswers.push(...saved)
+}
+update()
 document.querySelectorAll(".toggle").forEach(btn => {
   btn.addEventListener("click", () => {
     const subject = btn.dataset.subject
@@ -108,6 +111,7 @@ function update() {
 function checkAnswer(answered, correct) {
   const buttons = document.querySelectorAll(".alt")
   correctAnswers.push(answered === correct)
+  localStorage.setItem("correctAnswers", JSON.stringify(correctAnswers))
   update()
 
   buttons.forEach(btn => {
