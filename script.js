@@ -2,8 +2,8 @@ async function getRandomQuestionsBatch() {
   const year = Math.floor(Math.random() * (2023 - 2009 + 1)) + 2009
   const offset = Math.floor(Math.random() * 170)
   const res = await fetch(`https://api.enem.dev/v1/exams/${year}/questions?limit=50&offset=${offset}`)
-  const data = await res.json() // retorna array de 10 questões
-  console.log(data.questions)
+  const data = await res.json() 
+
   return data.questions
 }
 
@@ -37,24 +37,33 @@ document.querySelectorAll(".toggle").forEach(btn => {
   })
 })
 
-async function verifyQuestion() {
-  const batch = await getRandomQuestionsBatch()
 
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[arr[i], arr[j]] = [arr[j], arr[i]]
+  }
+  return arr
+}
+
+async function verifyQuestion() {
+  let batch = await getRandomQuestionsBatch()
+  batch = shuffle(batch)
+  console.log(batch)
   const q = batch.find(q =>
     q.title &&
     q.alternatives &&
     q.alternatives.length > 0 &&
     q.correctAlternative &&
     (
-      selectedSubjects.size === 0 ||         // se nada estiver selecionado, vale tudo
-      selectedSubjects.has(q.discipline)    // se tiver algo, tem que combinar
+      selectedSubjects.size === 0 ||         
+      selectedSubjects.has(q.discipline)    
     )
   )
 
   if (q) {
     applyQuestion(q)
   } else {
-    // tenta outro batch
     verifyQuestion()
   }
 }
